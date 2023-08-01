@@ -1,7 +1,12 @@
+import { TimerPadre, Usuario } from "./components"
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+    <Usuario />
+    <hr />
+    <TimerPadre />
+    </>
   )
 }
 
