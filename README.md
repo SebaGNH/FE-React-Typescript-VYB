@@ -7,3 +7,9 @@ Se usa void ya que no retorna nada
 const incrementar = () : void {
    setCounter
 }
+
+
+const [segundos, setSegundos] = useState(0)
+setInterval ( ()=> setSegundos(s => s+1)) el primer valor es segundos
+
+ref?. = null check

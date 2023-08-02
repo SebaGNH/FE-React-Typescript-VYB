@@ -1,11 +1,13 @@
-import { TimerPadre, Usuario } from "./components"
+import { TimerPadre, Usuario, ContReducer } from "./components"
 
 const App = () => {
   return (
     <>
     <Usuario />
     <hr />
-    <TimerPadre />
+    {/* <TimerPadre /> */}
+    <hr />
+    <ContReducer />
     </>
   )
 }
