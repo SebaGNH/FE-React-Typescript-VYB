@@ -1,10 +1,9 @@
 import { ChangeEvent, useState } from 'react';
 
-export const useForm = () => {
-  const [formulario, setFormulario] = useState({
-    //edad: '',
-    //altura:''
-  });
+// T indica que es del tipo generico
+// <T extends Object | T extends Array>
+export const useForm = <T extends Object>(initialState: T) => {
+  const [formulario, setFormulario] = useState(initialState);
 
   const handleChange = ({target}: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = target;
@@ -16,6 +15,9 @@ export const useForm = () => {
 
   return {
     formulario,
-    handleChange
+    handleChange,
+    ...formulario
+    //Regresa todo lo del formulario destructurado
+    // { formulario, handleChange, color }
   }
 }
