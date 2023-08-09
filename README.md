@@ -13,3 +13,21 @@ const [segundos, setSegundos] = useState(0)
 setInterval ( ()=> setSegundos(s => s+1)) el primer valor es segundos
 
 ref?. = null check
+
+
+
+
+    <BrowserRouter>
+    <div className="container pb-5">
+        <AppRouter/>
+        {/* <Usuario /> */}
+        <hr />
+        {/* <TimerPadre /> */}
+        <hr />
+        {/* <ContReducer /> */}
+        <hr />
+        {/* <Formulario /> */}
+        <hr /><hr /><hr />
+        {/* <Formulario2 /> */}
+      </div>
+    </BrowserRouter>
