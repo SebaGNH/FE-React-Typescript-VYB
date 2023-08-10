@@ -1,7 +1,6 @@
 import React from 'react';
 import {Routes, Route, NavLink} from 'react-router-dom';
-// import { Usuario } from '../components';
-import { TimerPadre, Usuario, ContReducer, Formulario, Formulario2 } from "../components";
+import { TimerPadre, Usuario, ContReducer, Formulario, Formulario2, Todo } from "../components";
 
 export const AppRoutes = () => {
   return (
@@ -21,6 +20,18 @@ export const AppRoutes = () => {
               <NavLink to="/timer-padre" className="nav-link btn btn-info mx-2">
                 TimerPadre
               </NavLink>
+              <NavLink to="/cont-Reducer" className="nav-link btn btn-info mx-2">
+                Contador Reducer
+              </NavLink>
+              <NavLink to="/formulario" className="nav-link btn btn-info mx-2">
+              Formulario
+              </NavLink>
+              <NavLink to="/formulario2" className="nav-link btn btn-info mx-2">
+              Formulario 2
+              </NavLink>
+              <NavLink to="/Todo" className="nav-link btn btn-info mx-2">
+              Todo
+              </NavLink>
 
             </ul>
           </div>
@@ -32,6 +43,10 @@ export const AppRoutes = () => {
         <Route path='/usuario' element={<Usuario />}/>
         <Route path='/usuario' element={<Usuario />}/>
         <Route path='/timer-padre' element={<TimerPadre />}/>
+        <Route path='/cont-Reducer' element={<ContReducer />}/>
+        <Route path='/formulario' element={<Formulario />}/>
+        <Route path='/formulario2' element={<Formulario2 />}/>
+        <Route path='/Todo' element={<Todo />}/>
       </Routes>
     </>
   )
