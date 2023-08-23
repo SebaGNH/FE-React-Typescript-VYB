@@ -1,10 +1,11 @@
-import React from 'react'
-import { TodoContext } from './TodoContext'
+import React, { useReducer } from 'react';
+import { TodoContext } from './TodoContext';
 import { TodoStateI } from '../interfaces/interfaces';
+import { todoReducer } from './todoReducer';
 // recibe los hijos que serán renderizados adentro
 
+// Permitimos 1 o varios "|" de esta manera el <TodoProvider> de <Todo /> no se quejará al tener varios elementos "h1 + ul"
 interface TodoProviderProps {
-  // Permitimos 1 o varios "|" de esta manera el <TodoProvider> de <Todo /> no se quejará al tener varios elementos "h1 + ul"
   children: JSX.Element | JSX.Element[];
 }
 
@@ -19,7 +20,7 @@ const INITIAL_STATE: TodoStateI = {
     },
     {
       id: '2',
-      desc:'RPiedra del alma',
+      desc:'Piedra del alma',
       completed: false
     }
 ],
@@ -28,8 +29,13 @@ const INITIAL_STATE: TodoStateI = {
 }
 
 export const TodoProvider = ({children} : TodoProviderProps) => {
+  const [state, dispatch] = useReducer(todoReducer, INITIAL_STATE);
+
+  const toggleTodo = (id: string) => {
+    dispatch({ type: 'toggleTodo', payload:{id: id}})
+  }
   return (
-    <TodoContext.Provider value={{}}>
+    <TodoContext.Provider value={{state, toggleTodo}}>
       {children}
     </TodoContext.Provider>
   )
