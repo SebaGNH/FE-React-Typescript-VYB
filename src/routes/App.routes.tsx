@@ -1,6 +1,7 @@
 import React from 'react';
 import {Routes, Route, NavLink} from 'react-router-dom';
 import { TimerPadre, Usuario, ContReducer, Formulario, Formulario2, Todo } from "../components";
+import { TodoHooks } from '../todoConHooks/TodoHooks';
 
 export const AppRoutes = () => {
   return (
@@ -32,6 +33,9 @@ export const AppRoutes = () => {
               <NavLink to="/Todo" className="nav-link btn btn-info mx-2">
               Todo
               </NavLink>
+              <NavLink to="/TodoHooks" className="nav-link btn btn-info mx-2">
+              TodoHooks
+              </NavLink>
 
             </ul>
           </div>
@@ -47,6 +51,7 @@ export const AppRoutes = () => {
         <Route path='/formulario' element={<Formulario />}/>
         <Route path='/formulario2' element={<Formulario2 />}/>
         <Route path='/Todo' element={<Todo />}/>
+        <Route path='/TodoHooks' element={<TodoHooks />}/>
       </Routes>
     </>
   )
